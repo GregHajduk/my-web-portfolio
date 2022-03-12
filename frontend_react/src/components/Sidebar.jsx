@@ -4,7 +4,7 @@ import { Github, Linkedin } from "@styled-icons/bootstrap/";
 
 const SideBar = styled.div`
   border-right: 1px solid #ffffff4c;
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   height: 51vh;

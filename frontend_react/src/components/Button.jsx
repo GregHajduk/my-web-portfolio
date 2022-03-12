@@ -7,7 +7,7 @@ const Btn = styled.button`
   padding: 0.75rem 2.25rem;
   transition: 0.3s all ease-in-out;
   position: relative;
-  border: 1px solid var(--main-bg-color);
+  border: 1px solid transparent;
   border-radius: 20px;
   font-size: 0.875rem;
   font-weight: 200;

@@ -90,10 +90,10 @@ const Navbar = () => {
 
   const navLinks = [
     { id: 1, name: "home" },
-    { id: 2, name: "about" },
-    { id: 3, name: "contact" },
-    { id: 4, name: "projects" },
-    { id: 5, name: "skills" },
+    { id: 2, name: "projects" },
+    { id: 3, name: "about" },
+    { id: 4, name: "skills" },
+    { id: 5, name: "contact" },
   ];
   return (
     <Nav>
@@ -105,7 +105,6 @@ const Navbar = () => {
       </NavMenuButtonContainer>
       <NavLinks onClick={() => setOpen(false)} open={open}>
         {navLinks.map((link) => {
-          const { id, name } = link;
           return (
             <NavLinkWrapper key={link.id}>
               <NavLink href={`#${link}`}>{link.name}</NavLink>

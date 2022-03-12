@@ -1,26 +1,41 @@
 import styled from "styled-components";
 import profile from "../images/profile.jpg";
 import Button from "../components/Button";
+import particles from "../images/particles.jpg";
 
 const Container = styled.div`
-  height: 100vh;
-  display: flex;
-  align-items: center;
+width: 100%;
+height: 100vh;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100vw;
+  background-image: url(${particles});
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.3;
+  z-index: -1;
+
+  }
 `;
 const InfoContainer = styled.div`
   flex: 1;
-  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: center;
-  padding-top: 20%;
-  padding-right: 1rem;
   height: 100%;
   width: 100%;
 `;
 const ImgContainer = styled.div`
-  flex: 2;
+  flex: 1;
   height: 80%;
   width: 50%;
   background-color: var(--main-accent-color);
@@ -39,20 +54,15 @@ const BgImg = styled.div`
   mix-blend-mode: luminosity;
 `;
 const Title = styled.h1`
-  position: absolute;
-  top: 25%;
-  right: -35%;
   background-color: var(--main-bg-color);
-  padding: 2rem 4rem;
-  border-radius: 7rem;
   font-size: 3.5rem;
-  z-index: 10;
+  margin-bottom: 1rem;
 `;
 const Desc = styled.p`
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 200;
   text-transform: uppercase;
-  text-align: right;
+  color: #bebebe;
   margin-bottom: 3rem;
 `;
 
