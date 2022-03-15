@@ -9,7 +9,7 @@ const Btn = styled.button`
   border: 1px solid transparent;
   border-radius: 20px;
   font-size: 0.875rem;
-  font-weight: 200;
+  font-weight: 900;
   text-transform: uppercase;
   :hover {
     border: 1px solid var(--main-accent-color);

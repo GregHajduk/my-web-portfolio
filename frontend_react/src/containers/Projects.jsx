@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { urlFor, client } from "../client";
 import Subtitle from "../components/Subtitle";
 import styled from "styled-components";
-import { Eye, Github } from "@styled-icons/bootstrap";
+import { Link, Github } from "@styled-icons/bootstrap";
 
 const Container = styled.div`
   width: 100%;
@@ -17,7 +17,6 @@ const ProjectsFiltersContainer = styled.div`
 `;
 const SingleFilter = styled.button`
   border: none;
-  color: var(--main-text-color);
   padding: 0.5rem 1rem;
   transition: all 0.5s;
   width: 9rem;
@@ -81,8 +80,9 @@ const ProjectInfoContainer = styled.div`
   align-items: center;
 `;
 const ProjectTitle = styled.h4`
-  margin: 0.8rem 0 0.3rem 0;
-  text-transform: uppercase;
+  margin: 0.8rem 0 0.5rem 0;
+  font-weight: 900;
+  font-size: 1.125rem;
 `;
 const ProjectDesc = styled.p`
   font-weight: 200;
@@ -155,7 +155,7 @@ const Projects = () => {
       </ProjectsFiltersContainer>
       <AllProjectsContainer
         animate={animateCard}
-        transition={{ duration: 0.5, delayChildren: 0.5 }}
+        transition={{ duration: 0.5 }}
       >
         {filteredProjects.map((project, index) => {
           return (
@@ -167,7 +167,6 @@ const Projects = () => {
                   transition={{
                     duration: 0.25,
                     ease: "easeInOut",
-                    staggerChildren: 0.5,
                   }}
                 >
                   <ProjectIconContainer
@@ -180,7 +179,7 @@ const Projects = () => {
                       whileHover={{ scale: [1, 0.9] }}
                       transition={{ duration: 0.25 }}
                     >
-                      <Eye />
+                      <Link />
                     </motion.div>
                   </ProjectIconContainer>
                   <ProjectIconContainer

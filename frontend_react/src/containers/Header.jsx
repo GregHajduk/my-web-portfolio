@@ -56,6 +56,7 @@ const BgImg = styled.div`
 const Title = styled.h1`
   background-color: var(--main-bg-color);
   font-size: 3.5rem;
+  font-weight: 900;
   margin-bottom: 1rem;
 `;
 const Desc = styled.p`

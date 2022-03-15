@@ -18,8 +18,15 @@ const AllSkillsContainer = styled(motion.ul)`
   flex-wrap: wrap;
   gap: 4rem;
 `;
+const SkillDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+`;
 const Skill = styled(motion.li)`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 6rem;
@@ -30,6 +37,10 @@ const Skill = styled(motion.li)`
 const SkillImage = styled.img`
   height: 60%;
   width: 60%;
+`;
+const SkillName = styled(motion.p)`
+  font-size: 0.75rem;
+  color: var(--medium-text-color);
 `;
 const Skills = () => {
   const [skills, setSkills] = useState([]);
@@ -46,19 +57,25 @@ const Skills = () => {
     <Container>
       <Subtitle subtitle="skills" />
       <AllSkillsContainer
-        whileInView={{ opacity: [0, 1], y: [20, 0] }}
+        whileInView={{ opacity: [0, 1] }}
         transition={{ duration: 1 }}
       >
         {skills.map((skill, i) => {
           return (
-            <Skill
-              key={skill.name}
-              whileInView={{ scale: [0, 1] }}
-              whileHover={{ y: -5 }}
-              transition={{ duration: 0.25, delay: i * 0.05 }}
-            >
-              <SkillImage src={urlFor(skill.icon)} alt={skill.name} />
-            </Skill>
+            <SkillDetails key={skill.name}>
+              <Skill
+                whileInView={{ scale: [0, 1]}}
+                transition={{ duration: 0.25, delay: i * 0.05 }}
+              >
+                <SkillImage src={urlFor(skill.icon)} alt={skill.name} />
+              </Skill>
+              <SkillName
+                whileInView={{ scale: [0, 1], y: [20, 0] }}
+                transition={{ duration: 0.25, delay: i * 0.05 }}
+              >
+                {skill.name}
+              </SkillName>
+            </SkillDetails>
           );
         })}
       </AllSkillsContainer>

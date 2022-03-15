@@ -70,7 +70,7 @@ const NavLinkWrapper = styled.li`
   border: 1px solid transparent;
   border-radius: 20px;
   font-size: 0.875rem;
-  font-weight: 200;
+  font-weight: 900;
   text-transform: uppercase;
   cursor: pointer;
   :hover {
