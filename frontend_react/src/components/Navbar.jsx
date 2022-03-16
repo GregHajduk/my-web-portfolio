@@ -12,6 +12,7 @@ const Nav = styled.nav`
   left: 0;
   height: 5rem;
   width: 100%;
+  background-color: var(--dark-accent-color);
   color: var(--main-color);
   display: flex;
   align-items: center;
@@ -25,7 +26,15 @@ const LogoContainer = styled.div`
 const Logo = styled.img`
   height: 100%;
   cursor: pointer;
+
+  animation: rotate 5s linear infinite;
+  @keyframes rotate {
+    to {
+      transform: rotateY(360deg);
+    }
+  }
 `;
+
 const NavMenuButtonContainer = styled.div`
   height: 3rem;
   width: 3rem;
@@ -107,7 +116,7 @@ const Navbar = () => {
         {navLinks.map((link) => {
           return (
             <NavLinkWrapper key={link.id}>
-              <NavLink href={`#${link}`}>{link.name}</NavLink>
+              <NavLink href={`#${link.name}`}>{link.name}</NavLink>
             </NavLinkWrapper>
           );
         })}

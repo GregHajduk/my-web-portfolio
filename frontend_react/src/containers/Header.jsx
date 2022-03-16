@@ -4,25 +4,24 @@ import Button from "../components/Button";
 import particles from "../images/particles.jpg";
 
 const Container = styled.div`
-width: 100%;
-height: 100vh;
-display: flex;
-align-items: center;
-gap: 0.5rem;
-::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100vw;
-  background-image: url(${particles});
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.3;
-  z-index: -1;
-
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  ::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+    background-image: url(${particles});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+    z-index: -1;
   }
 `;
 const InfoContainer = styled.div`
@@ -66,10 +65,10 @@ const Desc = styled.p`
   color: #bebebe;
   margin-bottom: 3rem;
 `;
-
+const ButtonContainer = styled.a``
 const Header = () => {
   return (
-    <Container>
+    <Container id="home">
       <InfoContainer>
         <Title>
           Grzegorz
@@ -77,7 +76,9 @@ const Header = () => {
           Hajduk
         </Title>
         <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit.</Desc>
-        <Button title="see my work" />
+        <ButtonContainer href="#projects">
+          <Button title="see my work" />
+        </ButtonContainer>
       </InfoContainer>
       <ImgContainer>
         <BgImg />

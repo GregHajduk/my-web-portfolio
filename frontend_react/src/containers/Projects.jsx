@@ -7,34 +7,35 @@ import { Link, Github } from "@styled-icons/bootstrap";
 
 const Container = styled.div`
   width: 100%;
-  min-height: calc(100vh - 5rem);
+  padding-top: 8rem;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 const ProjectsFiltersContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin-bottom: 5rem;
 `;
 const SingleFilter = styled.button`
+  width: 10rem;
+  padding: 0.75rem 1.5rem;
+  color: var(--main-text-color);
+  font-weight: 600;
   border: none;
-  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-transform: uppercase;
   transition: all 0.5s;
-  width: 9rem;
-  font-weight: bold;
-  box-shadow: 0 0 0.5em var(--main-accent-color);
   ${({ active, filter }) =>
     active === filter.title
       ? `background-color: var(--main-accent-color);
-        color:var(--dark-accent-color)`
-      : `background-color: var(--main-bg-color)`};
-  :first-child {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-  }
-  :last-child {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
+        color:var(--dark-accent-color);
+        box-shadow: 0 0 0.5rem var(--main-accent-color);`
+      : `background-color: var(--dark-accent-color)`};
 `;
 const AllProjectsContainer = styled(motion.div)`
   max-width: 100%;
@@ -137,7 +138,7 @@ const Projects = () => {
     }, 500);
   };
   return (
-    <Container>
+    <Container id="projects">
       <Subtitle subtitle="My projects portfolio" />
       <ProjectsFiltersContainer>
         {filters.map((filter) => {

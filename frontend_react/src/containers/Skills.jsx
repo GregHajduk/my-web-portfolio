@@ -54,7 +54,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <Container>
+    <Container id="skills">
       <Subtitle subtitle="skills" />
       <AllSkillsContainer
         whileInView={{ opacity: [0, 1] }}

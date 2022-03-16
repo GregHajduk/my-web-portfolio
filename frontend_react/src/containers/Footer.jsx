@@ -46,6 +46,9 @@ const sharedStyles = css`
   display: block;
   width: 100%;
   background: none;
+  color: var(--main-text-color);
+  font-size: 1rem;
+  font-weight: 200;
   border: 1px solid var(--medium-text-color);
   resize: none;
   outline: 0;
@@ -91,24 +94,27 @@ const InfoListItem = styled.li`
 const Message = styled.div``;
 
 const Footer = () => {
-  const [message, setMessage] = useState(false)
+  const [message, setMessage] = useState(false);
   return (
-    <Container>
+    <Container id="contact">
       <Subtitle subtitle="contact" />
 
       <ContactContainer>
         <ContactForm>
           <Form
-            id="cform"
-            action=""
-            method="post"
-            novalidate="novalidate"
+            action="https://formsubmit.co/44467ebeb1a44d0d718a5c88766afb9c"
+            method="POST"
           >
             <FormItem>
               <Label>
                 Full Name <Strong>*</Strong>
               </Label>
-              <Input type="text" name="name" placeholder="Your full name" />
+              <Input
+                type="text"
+                name="name"
+                placeholder="Your full name"
+                required
+              />
             </FormItem>
             <FormItem>
               <Label>
@@ -118,6 +124,7 @@ const Footer = () => {
                 type="email"
                 name="email"
                 placeholder="example@domain.com"
+                required
               />
             </FormItem>
             <FormItem>
@@ -127,14 +134,15 @@ const Footer = () => {
               <Textarea
                 name="message"
                 placeholder="Write Your message here"
+                required
               ></Textarea>
             </FormItem>
 
             <Button type="submit" title="send message" />
           </Form>
-          <Message>
+          {/* <Message>
             <p>Thanks, your message is sent successfully.</p>
-          </Message>
+          </Message> */}
         </ContactForm>
 
         <ContactInfo>
@@ -155,7 +163,11 @@ const Footer = () => {
               </InfoListItem>
 
               <InfoListItem>
-                <Strong>E-mail:<br/></Strong> greghajdukphotography@gmail.com
+                <Strong>
+                  E-mail:
+                  <br />
+                </Strong>{" "}
+                greghajdukphotography@gmail.com
               </InfoListItem>
             </InfoList>
           </InfoListContainer>
