@@ -3,14 +3,8 @@ import { motion } from "framer-motion";
 import { urlFor, client } from "../client";
 import Subtitle from "../components/Subtitle";
 import styled from "styled-components";
+import SectionContainer from "../components/SectionContainer";
 
-const Container = styled.div`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
 const AllSkillsContainer = styled(motion.ul)`
   display: flex;
   align-items: center;
@@ -54,7 +48,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <Container id="skills">
+    <SectionContainer id="skills">
       <Subtitle subtitle="skills" />
       <AllSkillsContainer
         whileInView={{ opacity: [0, 1] }}
@@ -79,7 +73,7 @@ const Skills = () => {
           );
         })}
       </AllSkillsContainer>
-    </Container>
+    </SectionContainer>
   );
 };
 

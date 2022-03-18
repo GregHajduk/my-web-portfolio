@@ -6,6 +6,7 @@ import particles from "../images/particles.jpg";
 const Container = styled.div`
   width: 100%;
   height: 100vh;
+  padding-top: 5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -22,6 +23,9 @@ const Container = styled.div`
     background-size: cover;
     opacity: 0.3;
     z-index: -1;
+  }
+  @media (max-width: 40rem) {
+    flex-direction: column;
   }
 `;
 const InfoContainer = styled.div`
@@ -40,6 +44,10 @@ const ImgContainer = styled.div`
   background-color: var(--main-accent-color);
   border-top-right-radius: 20.2rem;
   border-bottom-left-radius: 20.2rem;
+  @media (max-width: 40rem) {
+    width: 100%;
+    border-radius: 0;
+  }
 `;
 const BgImg = styled.div`
   height: 100%;
@@ -51,6 +59,9 @@ const BgImg = styled.div`
   border-bottom-left-radius: 20rem;
   filter: grayscale(1);
   mix-blend-mode: luminosity;
+  @media (max-width: 40rem) {
+    border-radius: 0;
+  }
 `;
 const Title = styled.h1`
   background-color: var(--main-bg-color);
@@ -65,7 +76,7 @@ const Desc = styled.p`
   color: #bebebe;
   margin-bottom: 3rem;
 `;
-const ButtonContainer = styled.a``
+const ButtonContainer = styled.a``;
 const Header = () => {
   return (
     <Container id="home">
@@ -75,7 +86,7 @@ const Header = () => {
           <br />
           Hajduk
         </Title>
-        <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit.</Desc>
+        <Desc>web developer with passion for new technologies </Desc>
         <ButtonContainer href="#projects">
           <Button title="see my work" />
         </ButtonContainer>

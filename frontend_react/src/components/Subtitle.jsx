@@ -4,7 +4,7 @@ const SectionSubtitle = styled.h2`
   font-size: 3rem;
   font-weight: 900;
   text-transform: capitalize;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 `;
 
 const Subtitle = ({ subtitle }) => {

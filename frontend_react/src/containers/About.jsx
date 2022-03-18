@@ -1,14 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import SectionContainer from "../components/SectionContainer";
 import Subtitle from "../components/Subtitle";
-const Container = styled.div`
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
+
 const InfoContainer = styled.div`
   height: 100%;
   max-width: 60rem;
@@ -22,19 +16,20 @@ const QuoteContainer = styled.blockquote`
 `;
 const Quote = styled.p`
   line-height: 2;
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 3vw, 3rem);
 `;
 const TextContainer = styled.div`
+  min-width: 15rem;
   flex: 1;
 `;
 const Text = styled.p`
-font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 300;
   line-height: 2;
 `;
 const Span = styled.span`
   color: var(--main-accent-color);
-  font-size: 3rem;
+  font-size: clamp(1.75rem, 3vw, 3rem);
   font-weight: 900;
   white-space: nowrap;
 `;
@@ -49,7 +44,7 @@ const Author = styled.i`
 `;
 const About = () => {
   return (
-    <Container id="about">
+    <SectionContainer id="about">
       <Subtitle subtitle="about me" />
       <InfoContainer>
         <QuoteContainer>
@@ -69,7 +64,7 @@ const About = () => {
           </Text>
         </TextContainer>
       </InfoContainer>
-    </Container>
+    </SectionContainer>
   );
 };
 

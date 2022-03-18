@@ -7,23 +7,21 @@ import About from "./containers/About";
 import Projects from "./containers/Projects";
 import Skills from "./containers/Skills";
 import Footer from "./containers/Footer";
-import SectionContainer from "./components/SectionContainer";
-import Sidebar from "./components/Sidebar";
+import SiteContainer from "./components/SiteContainer";
 
 const App = () => {
   return (
     <>
       <GlobalStyles />
       <Variables />
-      <Sidebar />
-      <SectionContainer>
+      <SiteContainer>
         <Navbar />
         <Header />
         <About />
         <Projects />
         <Skills />
         <Footer />
-      </SectionContainer>
+      </SiteContainer>
     </>
   );
 };

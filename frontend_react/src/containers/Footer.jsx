@@ -2,22 +2,20 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import Subtitle from "../components/Subtitle";
 import Button from "../components/Button";
+import SectionContainer from "../components/SectionContainer";
 
-const Container = styled.div`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
 const ContactContainer = styled.div`
   display: flex;
   gap: 2rem;
   max-width: 50rem;
   flex-wrap: wrap;
+  @media (max-width: 40rem) {
+    padding-bottom:3rem;
+  }
 `;
 const ContactForm = styled.div`
   flex: 1;
+  min-width: 15rem;
 `;
 const Form = styled.form``;
 const FormItem = styled.div`
@@ -33,6 +31,7 @@ const Label = styled.label`
   font-weight: 800;
   background: var(--main-bg-color);
   text-transform: uppercase;
+  white-space: nowrap;
   z-index: 2;
 `;
 
@@ -85,7 +84,7 @@ const InfoListContainer = styled.div``;
 const InfoList = styled.ul``;
 const InfoListItem = styled.li`
   position: relative;
-  white-space: nowrap;
+
   width: 100%;
   margin-bottom: 1.5rem;
   display: inline-block;
@@ -96,7 +95,7 @@ const Message = styled.div``;
 const Footer = () => {
   const [message, setMessage] = useState(false);
   return (
-    <Container id="contact">
+    <SectionContainer id="contact">
       <Subtitle subtitle="contact" />
 
       <ContactContainer>
@@ -151,29 +150,26 @@ const Footer = () => {
           <InfoListContainer>
             <InfoList>
               <InfoListItem>
-                <Strong>Residence:</Strong> UK
+                <Strong>Residence: </Strong> UK
               </InfoListItem>
 
               <InfoListItem>
-                <Strong>City:</Strong> Harrogate
+                <Strong>City: </Strong> Harrogate
               </InfoListItem>
 
               <InfoListItem>
-                <Strong>Phone:</Strong> +44 7820886841
+                <Strong>Phone: </Strong> +44 7820886841
               </InfoListItem>
 
               <InfoListItem>
-                <Strong>
-                  E-mail:
-                  <br />
-                </Strong>{" "}
+                <Strong>E-mail: </Strong>
                 greghajdukphotography@gmail.com
               </InfoListItem>
             </InfoList>
           </InfoListContainer>
         </ContactInfo>
       </ContactContainer>
-    </Container>
+    </SectionContainer>
   );
 };
 

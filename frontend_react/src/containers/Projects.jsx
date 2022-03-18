@@ -4,15 +4,9 @@ import { urlFor, client } from "../client";
 import Subtitle from "../components/Subtitle";
 import styled from "styled-components";
 import { Link, Github } from "@styled-icons/bootstrap";
+import SectionContainer from "../components/SectionContainer";
 
-const Container = styled.div`
-  width: 100%;
-  padding-top: 8rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+
 const ProjectsFiltersContainer = styled.div`
   width: 100%;
   display: flex;
@@ -138,7 +132,7 @@ const Projects = () => {
     }, 500);
   };
   return (
-    <Container id="projects">
+    <SectionContainer style={{paddingTop: "5rem"}} id="projects">
       <Subtitle subtitle="My projects portfolio" />
       <ProjectsFiltersContainer>
         {filters.map((filter) => {
@@ -206,7 +200,7 @@ const Projects = () => {
           );
         })}
       </AllProjectsContainer>
-    </Container>
+    </SectionContainer>
   );
 };
 
