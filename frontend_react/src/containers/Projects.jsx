@@ -114,8 +114,7 @@ const Projects = () => {
   const filters = [
     { id: 1, title: "eCommerce" },
     { id: 2, title: "Landing pages" },
-    { id: 3, title: "Web Apps" },
-    { id: 4, title: "All" },
+    { id: 3, title: "All" },
   ];
   const handleFilter = (filter) => {
     setActive(filter.title);

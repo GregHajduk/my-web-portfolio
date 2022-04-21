@@ -4,6 +4,7 @@ import logo from "../images/Logo.svg";
 import Button from "../components/Button";
 import { Close } from "@styled-icons/evil/Close";
 import { Menu } from "@styled-icons/feather/Menu";
+import cv from "../resume/Grzegorz Hajduk CV.pdf"
 
 const Nav = styled.nav`
   padding: 0 5vw;
@@ -19,7 +20,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   z-index: 100;
 `;
-const LogoContainer = styled.div`
+const LogoContainer = styled.a`
   height: 100%;
   padding: 1rem 0;
 `;
@@ -44,7 +45,7 @@ const NavMenuButtonContainer = styled.div`
   display: none;
   cursor: pointer;
   z-index: 100;
-  @media (max-width: 40rem) {
+  @media (max-width: 57rem) {
     display: block;
   }
 `;
@@ -57,7 +58,7 @@ const NavLinks = styled.ul`
   width: 100%;
   transition: 0.3s all cubic-bezier(0.52, 0.4, 0.33, 1.01);
 
-  @media (max-width: 40rem) {
+  @media (max-width: 57rem) {
     position: absolute;
     top: 0;
     height: 100vh;
@@ -78,7 +79,7 @@ const NavLinkWrapper = styled.li`
   transition: 0.4s all ease-in-out;
   border: 1px solid transparent;
   border-radius: 20px;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
   font-weight: 900;
   text-transform: uppercase;
   cursor: pointer;
@@ -86,13 +87,14 @@ const NavLinkWrapper = styled.li`
     border: 1px solid var(--main-accent-color);
     box-shadow: 0 0 0.35em var(--main-accent-color);
   }
-  @media (max-width: 40rem) {
+  @media (max-width: 57rem) {
     width: 10rem;
   }
 `;
 const NavLink = styled.a`
   color: var(--main-text-color);
 `;
+const DownloadCv = styled.a``;
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -106,7 +108,7 @@ const Navbar = () => {
   ];
   return (
     <Nav>
-      <LogoContainer>
+      <LogoContainer href="#">
         <Logo src={logo} />
       </LogoContainer>
       <NavMenuButtonContainer open={open} onClick={() => setOpen(!open)}>
@@ -120,7 +122,9 @@ const Navbar = () => {
             </NavLinkWrapper>
           );
         })}
-        <Button title="download cv" />
+        <DownloadCv href={cv} download>
+          <Button title="download cv" />
+        </DownloadCv>
       </NavLinks>
     </Nav>
   );

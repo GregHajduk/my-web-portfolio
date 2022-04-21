@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import Subtitle from "../components/Subtitle";
 import Button from "../components/Button";
@@ -90,10 +89,10 @@ const InfoListItem = styled.li`
   display: inline-block;
   vertical-align: top;
 `;
-const Message = styled.div``;
+// const Message = styled.div``;
 
 const Footer = () => {
-  const [message, setMessage] = useState(false);
+  // const [message, setMessage] = useState(false);
   return (
     <SectionContainer id="contact">
       <Subtitle subtitle="contact" />
@@ -158,12 +157,12 @@ const Footer = () => {
               </InfoListItem>
 
               <InfoListItem>
-                <Strong>Phone: </Strong> +44 7820886841
+                <Strong>Phone: </Strong> +44 783 088 68 41
               </InfoListItem>
 
               <InfoListItem>
                 <Strong>E-mail: </Strong>
-                greghajdukphotography@gmail.com
+                hajdukdevelop@gmail.com
               </InfoListItem>
             </InfoList>
           </InfoListContainer>
