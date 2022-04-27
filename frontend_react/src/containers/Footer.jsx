@@ -156,7 +156,7 @@ const Footer = () => {
                 <Strong>City: </Strong> Harrogate
               </InfoListItem>
 
-              <InfoListItem>
+              <InfoListItem >
                 <Strong>Phone: </Strong> +44 783 088 68 41
               </InfoListItem>
 
